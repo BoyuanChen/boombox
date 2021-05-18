@@ -1,0 +1,25 @@
+lr: 0.0005
+if_cuda: True
+num_gpus: 1
+train_batch: 32
+val_batch: 32
+test_batch: 32
+num_workers: 6
+in_channels: 4
+data_filepath: './data'
+if_sound: True
+if_vision: False
+if_depth: False
+depth_representation: 'image' # 'array', 'array_normalized'
+output_representation: 'depth-l1' # 'pixel'
+epochs: 500
+seed: 2
+log_dir: 'logs'
+schedule: [125, 250, 375]
+gamma: 0.5
+if_all_input_data: True # False if processing data under different branches
+model_name: 'conv2d-encoder-decoder'
+num_branches: 3
+branches_in_channels: [1, 3, 3]
+test_hsv_threshold_lst: [[0, 52, 120], [26, 187, 186]] # [[lower], [upper]]
+shapes: ['small_cuboid']
